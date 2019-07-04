@@ -1,0 +1,84 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "lint-server": "eslint .",
+    "start-backend": "node .",
+    "posttest": "npm run lint",
+    "serve-client": "cd client && vue-cli-service serve",
+    "build-client": "cd client && vue-cli-service build --watch",
+    "lint-client": "cd client && vue-cli-service lint",
+    "nodemon-start": "nodemon",
+    "start": "parallelshell 'npm run build-client' 'npm run nodemon-start'"
+  },
+  "dependencies": {
+    "compression": "^1.0.3",
+    "core-js": "^2.6.5",
+    "cors": "^2.5.2",
+    "helmet": "^3.10.0",
+    "loopback": "^3.19.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^6.0.0",
+    "loopback-connector-mongodb": "^1.18.1",
+    "register-service-worker": "^1.6.2",
+    "serve-favicon": "^2.0.1",
+    "strong-error-handler": "^3.0.0",
+    "vue": "^2.6.6",
+    "vue-router": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.5.0",
+    "@vue/cli-plugin-eslint": "^3.5.0",
+    "@vue/cli-plugin-pwa": "^3.5.0",
+    "@vue/cli-service": "^3.5.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^3.17.1",
+    "eslint-config-loopback": "^8.0.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.9.0",
+    "nodemon": "^1.18.11",
+    "parallelshell": "^3.0.2",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "client/*"
+    ],
+    "delay": "2500"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "license": "MIT LICENSED",
+  "description": "example app"
+}
