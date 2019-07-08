@@ -6,12 +6,12 @@
     "validateUpsert": true
   },
   "properties": {
-    "empId": {
+    "name": {
       "type": "string",
       "required": true
     },
-    "name": {
-      "type": "string",
+    "age": {
+      "type": "number",
       "required": true
     },
     "position": {
